@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<TitledPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Acceuil" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.polytech.ihm.FenetreAcceuilController">
+<TitledPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Acceuil" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.polytech.ihm.FenetreAcceuilController">
    <content>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <center>
             <FlowPane alignment="TOP_CENTER" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
          </center>
          <left>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="Historique" BorderPane.alignment="CENTER">
+            <Button fx:id="historique" mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="Historique" BorderPane.alignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>
