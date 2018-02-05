@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Historique" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1">
+   <content>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Tout">
+               <content>
+                  <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TableView prefHeight="305.0" prefWidth="545.0">
+                          <columns>
+                            <TableColumn prefWidth="106.0" text="Type" />
+                            <TableColumn prefWidth="307.0" text="Description" />
+                              <TableColumn minWidth="0.0" prefWidth="131.0" text="Importance" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </FlowPane>
+               </content>
+          </Tab>
+          <Tab text="Sanitaire">
+               <content>
+                  <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TableView prefHeight="305.0" prefWidth="545.0">
+                           <columns>
+                              <TableColumn prefWidth="106.0" text="Type" />
+                              <TableColumn prefWidth="307.0" text="Description" />
+                              <TableColumn minWidth="0.0" prefWidth="131.0" text="Importance" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </FlowPane>
+               </content>
+          </Tab>
+            <Tab text="Matériel">
+               <content>
+                  <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TableView prefHeight="305.0" prefWidth="545.0">
+                           <columns>
+                              <TableColumn prefWidth="106.0" text="Type" />
+                              <TableColumn prefWidth="307.0" text="Description" />
+                              <TableColumn minWidth="0.0" prefWidth="131.0" text="Importance" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </FlowPane>
+               </content>
+            </Tab>
+            <Tab text="Organisation">
+               <content>
+                  <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TableView prefHeight="305.0" prefWidth="545.0">
+                           <columns>
+                              <TableColumn prefWidth="106.0" text="Type" />
+                              <TableColumn prefWidth="307.0" text="Description" />
+                              <TableColumn minWidth="0.0" prefWidth="131.0" text="Importance" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </FlowPane>
+               </content>
+            </Tab>
+            <Tab text="Autre">
+               <content>
+                  <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TableView prefHeight="305.0" prefWidth="545.0">
+                           <columns>
+                              <TableColumn prefWidth="106.0" text="Type" />
+                              <TableColumn prefWidth="307.0" text="Description" />
+                              <TableColumn minWidth="0.0" prefWidth="131.0" text="Importance" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </FlowPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </content>
+</TitledPane>
