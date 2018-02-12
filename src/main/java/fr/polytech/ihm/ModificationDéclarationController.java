@@ -1,4 +1,4 @@
 package fr.polytech.ihm;
 
-public class ModificationDéclarationController {
+public class ModificationDéclarationController extends Controllers{
 }

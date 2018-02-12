@@ -1,4 +1,4 @@
 package fr.polytech.ihm;
 
-public class ApercuDeclarationController {
+public class ApercuDeclarationController extends Controllers{
 }

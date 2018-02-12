@@ -1,4 +1,4 @@
 package fr.polytech.ihm;
 
-public class HistoriqueIncidentsController {
+public class HistoriqueIncidentsController extends Controllers{
 }
