@@ -20,7 +20,7 @@ public class ModificationDéclarationController extends Controllers {
     @FXML
     public void handleAnnulerButton() {
 
-        String fxmlFile = "/fxml/ApercuIncident.fxml";
+        String fxmlFile = "/fxml/ApercuDeclaration.fxml";
         showScene(fxmlFile,anchorPane,"Aperçu incident");
     }
 
