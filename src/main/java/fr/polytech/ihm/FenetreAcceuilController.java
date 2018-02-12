@@ -1,10 +1,12 @@
 package fr.polytech.ihm;
 
 import javafx.fxml.FXML;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.awt.event.MouseEvent;
@@ -20,23 +22,27 @@ public class FenetreAcceuilController {
     private Button historique;
 
     @FXML
-    public void handleDeclareButton(MouseEvent event){
-        String fxmlFile = "/fxml/DeclarerIncident.fxml";
-        FXMLLoader loader = new FXMLLoader();
-        try {
-            Stage stage=(Stage) declare.getScene().getWindow();
-            Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
+    private AnchorPane anchorPane;
 
-            Scene scene = new Scene(rootNode);
-            stage.setScene(scene);
-            //((DepartmentController)loader.getController()).initDepartement(clickedRow);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    @FXML
+    public void handleHistoriqueButton() {
+      /*  Stage stage = (Stage) historique.getScene().getWindow();
+
+        String fxmlFile = "/fxml/HistoriqueIncidents.fxml";
+        FXMLLoader loader = new FXMLLoader();
+        Parent rootNode = (Parent) anchorPane;
+
+        Scene scene = new Scene(rootNode, 400, 400);
+
+        stage.setTitle("Hello JavaFX and Maven");
+        stage.setScene(scene);
+        stage.show();
+    */
+
     }
 
     @FXML
-    public void handleHistoriqueButton(MouseEvent event){
+    public void handleDeclareButton(){
+        System.out.println("declare");
     }
 }
