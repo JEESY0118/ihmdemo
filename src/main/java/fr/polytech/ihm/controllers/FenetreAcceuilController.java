@@ -19,18 +19,13 @@ public class FenetreAcceuilController extends Controllers {
 
     @FXML
     public void handleHistoriqueButton() {
-
         String fxmlFile = "/fxml/HistoriqueIncidents.fxml";
         showScene(fxmlFile,anchorPane,"Historique Incidents");
-
-
     }
 
     @FXML
     public void handleDeclareButton(){
-
         String fxmlFile = "/fxml/DeclarationIncident.fxml";
         showScene(fxmlFile,anchorPane,"Declaration Incident");
-
     }
 }

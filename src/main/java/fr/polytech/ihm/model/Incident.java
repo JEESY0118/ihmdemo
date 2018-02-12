@@ -15,16 +15,16 @@ public class Incident {
     private TypeIncident typeIncident;
     private StringProperty description;
     private DatePicker date;
-    private Localisation localisation;
+    private Lieu lieu;
     private DegreImportance degreImportance;
     private StringProperty informationsComplementaires;
 
-    public Incident(User user, TypeIncident typeIncident, String description, DatePicker date, Localisation localisation, DegreImportance degreImportance, String informationsComplementaires){
+    public Incident(User user, TypeIncident typeIncident, String description, DatePicker date, Lieu lieu, DegreImportance degreImportance, String informationsComplementaires){
         this.user = user;
         this.typeIncident= typeIncident;
         this.description= new SimpleStringProperty(description);
         this.date= new DatePicker();
-        this.localisation = localisation;
+        this.lieu = lieu;
         this.degreImportance= degreImportance;
         this.informationsComplementaires= new SimpleStringProperty(informationsComplementaires);
     }

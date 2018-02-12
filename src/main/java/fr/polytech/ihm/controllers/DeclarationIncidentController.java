@@ -1,36 +1,30 @@
 package fr.polytech.ihm.controllers;
 
+import fr.polytech.ihm.controllers.Controllers;
 import javafx.fxml.FXML;
-import javafx.scene.layout.AnchorPane;
-
-import java.awt.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TitledPane;
 
 public class DeclarationIncidentController extends Controllers {
-    public static class ModificationDéclarationController extends Controllers {
+    @FXML
+    private Button annuler;
 
-        @FXML
-        private Button annuler;
+    @FXML
+    private Button ajouter;
 
-        @FXML
-        private Button mettre;
+    @FXML
+    private TitledPane titledPane;
 
-        @FXML
-        private AnchorPane anchorPane;
+    @FXML
+    void handleAnnulerButton() {
+        String fxmlFile = "/fxml/FenetreAcceuil.fxml";
+        showScene(fxmlFile, titledPane,"Fenetre Acceuil");
 
-        @FXML
-        public void handleAnnulerButton() {
+    }
 
-            String fxmlFile = "/fxml/ApercuIncident.fxml";
-            showScene(fxmlFile,anchorPane,"Aperçu incident");
-        }
-
-        @FXML
-        public void handleMettreButton() {
-
-            String fxmlFile = "/fxml/ConfirmationDeclarationIncident.fxml";
-            showScene(fxmlFile,anchorPane,"Confirmation déclaration incident");
-
-        }
-
+    @FXML
+    void handleAjouterButton() {
+        String fxmlFile = "/fxml/ConfirmationDeclarationIncident.fxml";
+        showScene(fxmlFile, titledPane,"Confirmation Declaration Incident");
     }
 }
