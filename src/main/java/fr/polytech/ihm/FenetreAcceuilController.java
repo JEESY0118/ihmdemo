@@ -9,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 
 
@@ -26,23 +25,32 @@ public class FenetreAcceuilController {
 
     @FXML
     public void handleHistoriqueButton() {
-      /*  Stage stage = (Stage) historique.getScene().getWindow();
 
         String fxmlFile = "/fxml/HistoriqueIncidents.fxml";
-        FXMLLoader loader = new FXMLLoader();
-        Parent rootNode = (Parent) anchorPane;
+        showScene(fxmlFile);
 
-        Scene scene = new Scene(rootNode, 400, 400);
-
-        stage.setTitle("Hello JavaFX and Maven");
-        stage.setScene(scene);
-        stage.show();
-    */
 
     }
 
     @FXML
     public void handleDeclareButton(){
-        System.out.println("declare");
+
+        String fxmlFile = "/fxml/DeclarationIncident.fxml";
+        showScene(fxmlFile);
+
+    }
+
+    public void showScene(String fxmlFile){
+        FXMLLoader loader = new FXMLLoader();
+        try {
+            Stage stage=(Stage) anchorPane.getScene().getWindow();
+            Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
+
+            Scene scene = new Scene(rootNode);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
