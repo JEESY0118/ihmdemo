@@ -1,9 +1,10 @@
-package fr.polytech.ihm;
+package fr.polytech.ihm.model;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.control.DatePicker;
 
 import java.util.Date;
 
@@ -13,7 +14,7 @@ public class Incident {
     private StringProperty prenom;
     private StringProperty typeIncident;
     private StringProperty description;
-    private StringProperty date;
+    private DatePicker date;
     private StringProperty localisation;
     private IntegerProperty degreImportance;
     private StringProperty informationsComplementaires;
@@ -23,7 +24,7 @@ public class Incident {
         this.prenom= new SimpleStringProperty(prenom);
         this.typeIncident= new SimpleStringProperty(typeIncident);
         this.description= new SimpleStringProperty(description);
-        this.date= new SimpleStringProperty(date);
+        this.date= new DatePicker();
         this.localisation=new SimpleStringProperty(localisation);
         this.degreImportance= new SimpleIntegerProperty(degreImportance);
         this.informationsComplementaires= new SimpleStringProperty(informationsComplementaires);
@@ -41,8 +42,8 @@ public class Incident {
     public String getDescription(){return description.get();}
     public StringProperty descriptionProperty(){return description;}
 
-    public String getDate(){return date.get();}
-    public StringProperty dateProperty(){return date;}
+    public DatePicker getDate(){return date;}
+    public String getdateString(){return date.toString();}
 
     public String getLocalisation(){return localisation.get();}
     public StringProperty localisationProperty(){return localisation;}

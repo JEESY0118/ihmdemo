@@ -1,11 +1,12 @@
 package fr.polytech.ihm;
 
+import fr.polytech.ihm.controllers.Controllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TitledPane;
 
 
-public class DeclarationIncidentController extends Controllers{
+public class DeclarationIncidentController extends Controllers {
 
         @FXML
         private Button annuler;

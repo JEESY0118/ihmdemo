@@ -1,12 +1,13 @@
-package fr.polytech.ihm;
+package fr.polytech.ihm.controllers;
 
+import fr.polytech.ihm.controllers.Controllers;
 import javafx.fxml.FXML;
 
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 
 
-public class FenetreAcceuilController extends Controllers{
+public class FenetreAcceuilController extends Controllers {
 
     @FXML
     private Button declare;

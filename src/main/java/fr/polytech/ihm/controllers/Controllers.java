@@ -1,4 +1,4 @@
-package fr.polytech.ihm;
+package fr.polytech.ihm.controllers;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
