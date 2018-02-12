@@ -29,7 +29,7 @@
          <children>
             <FlowPane alignment="CENTER_RIGHT" GridPane.rowIndex="8">
                <children>
-                  <Button fx:id="retour" alignment="CENTER" cancelButton="true" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="68.0" text="Retour" />
+                  <Button fx:id="retour" alignment="CENTER" cancelButton="true" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="Retour" />
                </children>
             </FlowPane>
             <FlowPane alignment="CENTER" prefHeight="39.0" prefWidth="363.0" GridPane.columnIndex="1" GridPane.rowIndex="8">

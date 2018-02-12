@@ -19,7 +19,7 @@ public class MainApp extends Application {
     public void start(Stage stage) throws Exception {
         log.info("Starting Hello JavaFX and Maven demonstration application");
 
-        String fxmlFile = "/fxml/FenetreAcceuil.fxml";
+        String fxmlFile = "/fxml/ConfirmationDeclarationIncident.fxml";
         log.debug("Loading FXML for main view from: {}", fxmlFile);
         FXMLLoader loader = new FXMLLoader();
         Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
