@@ -1,4 +1,4 @@
-package fr.polytech.ihm;
+package fr.polytech.ihm.controllers;
 
 import javafx.fxml.FXML;
 
@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 
 
-public class ConfirmationDeclarationIncidentController extends Controllers{
+public class ConfirmationDeclarationIncidentController extends Controllers {
     @FXML
     private Button retourAuMenu;
 
