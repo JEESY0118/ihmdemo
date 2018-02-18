@@ -41,14 +41,14 @@
                   <Button fx:id="update" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleUpdateButton" text="Mettre à jour l'incident" />
                </children>
             </FlowPane>
-            <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ChoiceBox fx:id="choiceBoxTypeIncident" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="textFieldNom" GridPane.columnIndex="1" />
+            <TextField fx:id="textFieldPrenom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="textFieldDeclaration" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="textFieldLocalisation" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <ChoiceBox fx:id="choiceBoxDegreImportance" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextArea fx:id="textAreaInformationsComplementaires" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
             <Label text="* Nom :" />
             <Label text="* Prenom :" GridPane.rowIndex="1" />
             <Label text="* Type d'incident :" GridPane.rowIndex="2" />

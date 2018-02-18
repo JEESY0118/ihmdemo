@@ -28,6 +28,7 @@ public class MainApp extends Application {
     }
 
     public void start(Stage stage) throws Exception {
+        incidents.clear();
         initializeIncidents();
 
         log.info("Starting Hello JavaFX and Maven demonstration application");
@@ -51,12 +52,6 @@ public class MainApp extends Application {
     public static ObservableList<Incident> getSpecificIncidents(TypeIncident typeIncident){
         ObservableList<Incident> specificIncident = FXCollections.observableArrayList();
         switch(typeIncident){
-            case TOUT:
-                for(Incident incident : getIncidents()){
-                    if(incident.getTypeIncident() == TypeIncident.TOUT)
-                        specificIncident.add(incident);
-                }
-                break;
             case SANITAIRE:
                 for(Incident incident : getIncidents()){
                     if(incident.getTypeIncident() == TypeIncident.SANITAIRE)
@@ -92,7 +87,7 @@ public class MainApp extends Application {
             User user = new User("Lazrak","Sami");
             Lieu lieu = new Lieu("O+135");
             Date date = new Date(formatter.format(LocalDate.parse("16/01/2018", formatter)));
-            Incident incident = new Incident(user, TypeIncident.TOUT, "Tableau non effacé", date, lieu, DegreImportance.NONCRITIQUE, "");
+            Incident incident = new Incident(user, TypeIncident.ORGANISATION, "Tableau non effacé", date, lieu, DegreImportance.NONCRITIQUE, "");
 
             User user1 = new User("Wei","Wang");
             Lieu lieu1 = new Lieu("Toilettes");

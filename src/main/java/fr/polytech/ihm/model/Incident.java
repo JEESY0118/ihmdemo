@@ -36,6 +36,8 @@ public class Incident {
 
     public Date getDate(){return date;}
 
+    public Lieu getLieu(){return lieu;}
+
     public DegreImportance getDegreImportance(){return this.degreImportance;}
 
     public String getInformationsComplementaires(){return informationsComplementaires.get();}

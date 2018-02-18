@@ -12,7 +12,7 @@ public abstract class Controllers {
     public void showScene(String fxmlFile, Parent element, String titleStage){
         FXMLLoader loader = new FXMLLoader();
         try {
-            Stage stage=(Stage) element.getScene().getWindow();
+             Stage stage=(Stage) element.getScene().getWindow();
             Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
 
             Scene scene = new Scene(rootNode);
