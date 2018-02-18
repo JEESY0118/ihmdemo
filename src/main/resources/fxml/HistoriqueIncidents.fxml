@@ -28,11 +28,11 @@
                      <content>
                         <FlowPane alignment="CENTER" prefHeight="246.0" prefWidth="598.0">
                            <children>
-                              <TableView prefHeight="305.0" prefWidth="545.0">
+                              <TableView fx:id="tableViewTout" prefHeight="305.0" prefWidth="545.0">
                                  <columns>
-                                    <TableColumn prefWidth="106.0" text="Type" />
-                                    <TableColumn prefWidth="327.0" text="Description" />
-                                    <TableColumn minWidth="0.0" prefWidth="111.0" text="Date" />
+                                    <TableColumn fx:id="typeColumnTout" prefWidth="106.0" text="Type" />
+                                    <TableColumn fx:id="descriptionColumnTout" prefWidth="327.0" text="Description" />
+                                    <TableColumn fx:id="dateColumnTout" minWidth="0.0" prefWidth="111.0" text="Date" />
                                  </columns>
                               </TableView>
                            </children>
@@ -43,11 +43,11 @@
                      <content>
                         <FlowPane alignment="CENTER" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <TableView prefHeight="295.0" prefWidth="545.0">
+                              <TableView fx:id="tableViewSanitaire" prefHeight="295.0" prefWidth="545.0">
                                  <columns>
-                                    <TableColumn prefWidth="106.0" text="Type" />
-                                    <TableColumn prefWidth="307.0" text="Description" />
-                                    <TableColumn minWidth="0.0" prefWidth="131.0" text="Importance" />
+                                    <TableColumn fx:id="typeColumnSanitaire" prefWidth="106.0" text="Type" />
+                                    <TableColumn fx:id="descriptionColumnSanitaire" prefWidth="307.0" text="Description" />
+                                    <TableColumn fx:id="dateColumnSanitaire" minWidth="0.0" prefWidth="131.0" text="Date" />
                                  </columns>
                               </TableView>
                            </children>
@@ -58,11 +58,11 @@
                      <content>
                         <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <TableView prefHeight="305.0" prefWidth="545.0">
+                              <TableView fx:id="tableViewMateriel" prefHeight="305.0" prefWidth="545.0">
                                  <columns>
-                                    <TableColumn prefWidth="106.0" text="Type" />
-                                    <TableColumn prefWidth="307.0" text="Description" />
-                                    <TableColumn minWidth="0.0" prefWidth="131.0" text="Importance" />
+                                    <TableColumn fx:id="typeColumnMateriel" prefWidth="106.0" text="Type" />
+                                    <TableColumn fx:id="descriptionColumnMateriel" prefWidth="307.0" text="Description" />
+                                    <TableColumn fx:id="dateColumnMateriel" minWidth="0.0" prefWidth="131.0" text="Date" />
                                  </columns>
                               </TableView>
                            </children>
@@ -73,11 +73,11 @@
                      <content>
                         <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <TableView prefHeight="305.0" prefWidth="545.0">
+                              <TableView fx:id="tableViewOrganisation" prefHeight="305.0" prefWidth="545.0">
                                  <columns>
-                                    <TableColumn prefWidth="106.0" text="Type" />
-                                    <TableColumn prefWidth="307.0" text="Description" />
-                                    <TableColumn minWidth="0.0" prefWidth="131.0" text="Importance" />
+                                    <TableColumn fx:id="typeColumnOrganisation" prefWidth="106.0" text="Type" />
+                                    <TableColumn fx:id="descriptionColumnOrganisation" prefWidth="307.0" text="Description" />
+                                    <TableColumn fx:id="dateColumnOrganisation" minWidth="0.0" prefWidth="131.0" text="Date" />
                                  </columns>
                               </TableView>
                            </children>
@@ -88,11 +88,11 @@
                      <content>
                         <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <TableView prefHeight="305.0" prefWidth="545.0">
+                              <TableView fx:id="tableViewAutre" prefHeight="305.0" prefWidth="545.0">
                                  <columns>
-                                    <TableColumn prefWidth="106.0" text="Type" />
-                                    <TableColumn prefWidth="307.0" text="Description" />
-                                    <TableColumn minWidth="0.0" prefWidth="131.0" text="Importance" />
+                                    <TableColumn fx:id="typeColumnAutre" prefWidth="106.0" text="Type" />
+                                    <TableColumn fx:id="descriptionColumnAutre" prefWidth="307.0" text="Description" />
+                                    <TableColumn fx:id="dateColumnAutre" minWidth="0.0" prefWidth="131.0" text="Date" />
                                  </columns>
                               </TableView>
                            </children>

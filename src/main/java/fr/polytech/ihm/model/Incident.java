@@ -6,24 +6,22 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.control.DatePicker;
 
-import java.lang.reflect.Type;
-import java.util.Date;
 
 public class Incident {
 
     private User user;
     private TypeIncident typeIncident;
     private StringProperty description;
-    private DatePicker date;
+    private Date date;
     private Lieu lieu;
     private DegreImportance degreImportance;
     private StringProperty informationsComplementaires;
 
-    public Incident(User user, TypeIncident typeIncident, String description, DatePicker date, Lieu lieu, DegreImportance degreImportance, String informationsComplementaires){
+    public Incident(User user, TypeIncident typeIncident, String description,Date date, Lieu lieu, DegreImportance degreImportance, String informationsComplementaires){
         this.user = user;
         this.typeIncident= typeIncident;
         this.description= new SimpleStringProperty(description);
-        this.date= new DatePicker();
+        this.date= date;
         this.lieu = lieu;
         this.degreImportance= degreImportance;
         this.informationsComplementaires= new SimpleStringProperty(informationsComplementaires);
@@ -36,8 +34,7 @@ public class Incident {
     public String getDescription(){return description.get();}
     public StringProperty descriptionProperty(){return description;}
 
-    public DatePicker getDatePicker(){return date;}
-    public String getDateString(){return date.toString();}
+    public Date getDate(){return date;}
 
     public DegreImportance getDegreImportance(){return this.degreImportance;}
 
