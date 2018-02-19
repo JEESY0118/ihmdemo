@@ -3,9 +3,12 @@ package fr.polytech.ihm.controllers;
 import fr.polytech.ihm.MainApp;
 import fr.polytech.ihm.controllers.Controllers;
 import fr.polytech.ihm.model.*;
+import javafx.animation.Interpolator;
+import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.util.Duration;
 
 import java.time.LocalDate;
 
@@ -47,6 +50,7 @@ public class DeclarationIncidentController extends Controllers {
     void handleAjouterButton() {
         if(textFieldNom.getText().isEmpty() || textFieldPrenom.getText().isEmpty() || choiceBoxTypeIncident.getValue()==null || textFieldDeclarationBreve.getText().isEmpty() || choiceBoxDegreImportance.getValue()==null){
             System.out.println(" Remplissez le formulaire correctement");
+            errorFormAnimation(textFieldNom,textFieldPrenom,choiceBoxTypeIncident,textFieldDeclarationBreve,choiceBoxDegreImportance);
             return;
         }
         String fxmlFile = "/fxml/ConfirmationDeclarationIncident.fxml";
@@ -77,4 +81,6 @@ public class DeclarationIncidentController extends Controllers {
 
         MainApp.getIncidents().add(incident);
     }
+
+
 }

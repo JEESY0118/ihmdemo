@@ -63,6 +63,7 @@ public class ModificationDeclarationController extends Controllers {
     public void handleUpdateButton(){
         if(textFieldNom.getText().isEmpty() || textFieldPrenom.getText().isEmpty() || choiceBoxTypeIncident.getValue()==null || textFieldDeclaration.getText().isEmpty() || choiceBoxDegreImportance.getValue()==null){
             System.out.println(" Remplissez le formulaire correctement");
+            errorFormAnimation(textFieldNom,textFieldPrenom,choiceBoxTypeIncident,textFieldDeclaration,choiceBoxDegreImportance);
             return;
         }
         remplaceIncident();
@@ -93,6 +94,8 @@ public class ModificationDeclarationController extends Controllers {
         Incident incident = new Incident(user, typeIncident, declarationBreve, date, lieu, degreImportance, informationsComplementaires);
         MainApp.getIncidents().add(incident);
     }
+
+
 
 
 }
