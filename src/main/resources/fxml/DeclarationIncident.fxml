@@ -50,7 +50,7 @@
                 <Label text="* Déclaration brève :" GridPane.rowIndex="3" />
                 <Label text="Date :" GridPane.rowIndex="4" />
                 <Label text="Localisation :" GridPane.rowIndex="5" />
-                <Label text="Degré d'importance : " GridPane.rowIndex="6" />
+                <Label text="* Degré d'importance : " GridPane.rowIndex="6" />
                 <Label text="Informations complémentaires : " GridPane.rowIndex="7" />
             <Button fx:id="ajouter" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleAjouterButton" prefHeight="39.0" prefWidth="204.0" text="Ajouter la déclaration" GridPane.columnIndex="1" GridPane.rowIndex="8" />
             </children>
