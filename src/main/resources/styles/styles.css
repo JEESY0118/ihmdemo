@@ -10,26 +10,28 @@
     -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
 }
 
-.button {
+.button-style {
     -fx-text-fill: white;
     -fx-font-family: "Arial Narrow";
     -fx-font-weight: bold;
-    -fx-background-color: #2196f3;
-    /*
-    -fx-background-color: linear-gradient(#61a2b1, #2A5058);*/
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
 }
 
-.button:hover{
-    -fx-base: #395bae;
+.button-style:hover{
+    -fx-background-color: blue;
 }
 
+.button-style:pressed{
+    -fx-background-color: red;
+}
 /* Component specific styles */
 
 
 .main-panel {
-    -fx-background-image: url("../images/background.jpg");
+   -fx-background-image: url("../images/background.jpg");
 }
+
 
 .hello-message {
     -fx-text-fill: #AA0000;

@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<TitledPane fx:id="titledPane" animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Aperçu de la déclaration" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.polytech.ihm.controllers.ApercuDeclarationController">
+<TitledPane fx:id="titledPane" animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Aperçu de la déclaration" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.polytech.ihm.controllers.ApercuDeclarationController">
    <content>
-      <GridPane alignment="BOTTOM_CENTER">
+      <GridPane alignment="BOTTOM_CENTER" styleClass="main-panel">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.0" minWidth="10.0" prefWidth="208.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="393.0" minWidth="10.0" prefWidth="370.0" />
@@ -29,12 +29,12 @@
          <children>
             <FlowPane alignment="CENTER_RIGHT" GridPane.rowIndex="8">
                <children>
-                  <Button fx:id="retour" alignment="CENTER" cancelButton="true" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleRetourButton" prefHeight="25.0" prefWidth="103.0" text="Retour" />
+                  <Button fx:id="retour" alignment="CENTER" cancelButton="true" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleRetourButton" prefHeight="25.0" prefWidth="103.0" styleClass="button-style" text="Retour" />
                </children>
             </FlowPane>
             <FlowPane alignment="CENTER" prefHeight="39.0" prefWidth="363.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
                <children>
-                  <Button fx:id="modifier" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleModifierButton" text="Modifier la déclaration" />
+                  <Button fx:id="modifier" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleModifierButton" styleClass="button-style" text="Modifier la déclaration" />
                </children>
             </FlowPane>
             <Label text="* Nom :" />

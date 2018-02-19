@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.polytech.ihm.controllers.FenetreAcceuilController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.polytech.ihm.controllers.FenetreAcceuilController">
    <children>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #a9a9a9;">
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #a9a9a9;" styleClass="main-panel">
          <bottom>
             <GridPane alignment="CENTER" prefHeight="63.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <columnConstraints>
@@ -25,12 +25,12 @@
                <children>
                   <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="declare" mnemonicParsing="false" onAction="#handleDeclareButton" prefHeight="25.0" prefWidth="162.0" text="Declarer un incident" />
+                        <Button fx:id="declare" mnemonicParsing="false" onAction="#handleDeclareButton" prefHeight="25.0" prefWidth="162.0" styleClass="button-style" text="Declarer un incident" />
                      </children>
                   </FlowPane>
                   <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                      <children>
-                        <Button fx:id="historique" mnemonicParsing="false" onAction="#handleHistoriqueButton" text="Historique des incidents" />
+                        <Button fx:id="historique" mnemonicParsing="false" onAction="#handleHistoriqueButton" styleClass="button-style" text="Historique des incidents" />
                      </children>
                   </FlowPane>
                </children>
