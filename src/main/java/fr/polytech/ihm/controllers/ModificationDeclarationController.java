@@ -5,6 +5,7 @@ import fr.polytech.ihm.model.*;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.paint.Color;
 
 import java.time.LocalDate;
 
@@ -12,6 +13,10 @@ import java.time.LocalDate;
 public class ModificationDeclarationController extends Controllers {
 
     private Incident incidentAModifier;
+
+    @FXML
+    private Label labelNom1,labelPrenom,labelIncident,labelDeclaration;
+
 
     @FXML
     private Button cancel;
@@ -23,7 +28,7 @@ public class ModificationDeclarationController extends Controllers {
     private TitledPane titledPane;
 
     @FXML
-    private TextField textFieldNom, textFieldPrenom, textFieldDeclaration, textFieldLocalisation;
+    private TextField fieldNom, textFieldPrenom, textFieldDeclaration, textFieldLocalisation;
 
     @FXML
     private ChoiceBox choiceBoxDegreImportance, choiceBoxTypeIncident;
@@ -43,7 +48,7 @@ public class ModificationDeclarationController extends Controllers {
 
     public void modifierIncident(Incident incidentAModifier) {
         this.incidentAModifier = incidentAModifier;
-        textFieldNom.setText(incidentAModifier.getUser().getNom());
+        fieldNom.setText(incidentAModifier.getUser().getNom());
         textFieldPrenom.setText(incidentAModifier.getUser().getPrenom());
         textFieldDeclaration.setText(incidentAModifier.getDescription());
         textFieldLocalisation.setText(incidentAModifier.getLieu().getLieu());
@@ -61,9 +66,10 @@ public class ModificationDeclarationController extends Controllers {
 
     @FXML
     public void handleUpdateButton(){
-        if(textFieldNom.getText().isEmpty() || textFieldPrenom.getText().isEmpty() || choiceBoxTypeIncident.getValue()==null || textFieldDeclaration.getText().isEmpty() || choiceBoxDegreImportance.getValue()==null){
+        if(fieldNom.getText().isEmpty() || textFieldPrenom.getText().isEmpty() || choiceBoxTypeIncident.getValue()==null || textFieldDeclaration.getText().isEmpty() || choiceBoxDegreImportance.getValue()==null){
             System.out.println(" Remplissez le formulaire correctement");
-            errorFormAnimation(textFieldNom,textFieldPrenom,choiceBoxTypeIncident,textFieldDeclaration,choiceBoxDegreImportance);
+            errorFormAnimation(fieldNom,textFieldPrenom,choiceBoxTypeIncident,textFieldDeclaration,choiceBoxDegreImportance);
+            changeColorErrorForm();
             return;
         }
         remplaceIncident();
@@ -72,7 +78,7 @@ public class ModificationDeclarationController extends Controllers {
     }
 
     public void remplaceIncident(){
-        String nom = textFieldNom.getText();
+        String nom = fieldNom.getText();
         String prenom = textFieldPrenom.getText();
         User user = new User(nom, prenom);
 
@@ -93,6 +99,38 @@ public class ModificationDeclarationController extends Controllers {
         MainApp.getIncidents().remove(incidentAModifier);
         Incident incident = new Incident(user, typeIncident, declarationBreve, date, lieu, degreImportance, informationsComplementaires);
         MainApp.getIncidents().add(incident);
+    }
+
+
+    public void changeColorErrorForm(){
+        if(fieldNom.getText().isEmpty()){
+            System.out.println("testFieldNom");
+            labelNom1.setTextFill(Color.RED);
+        }
+        if(textFieldPrenom.getText().isEmpty()){
+            labelPrenom.setTextFill(Color.RED);
+        }
+        if(choiceBoxTypeIncident.getValue()==null){
+            labelIncident.setTextFill(Color.RED);
+        }
+        if(textFieldDeclaration.getText().isEmpty()){
+            labelDeclaration.setTextFill(Color.RED);
+        }
+
+        if(!fieldNom.getText().isEmpty()){
+            System.out.println("testFieldNom");
+            labelNom1.setTextFill(Color.BLACK);
+        }
+        if(!textFieldPrenom.getText().isEmpty()){
+            labelPrenom.setTextFill(Color.BLACK);
+        }
+        if(!(choiceBoxTypeIncident.getValue()==null)){
+            labelIncident.setTextFill(Color.BLACK);
+        }
+        if(!textFieldDeclaration.getText().isEmpty()){
+            labelDeclaration.setTextFill(Color.BLACK);
+        }
+
     }
 
 

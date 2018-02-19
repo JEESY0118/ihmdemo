@@ -42,6 +42,7 @@ public class ApercuDeclarationController extends Controllers{
             Stage stage=(Stage) titledPane.getScene().getWindow();
             Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
             Scene scene = new Scene(rootNode);
+            scene.getStylesheets().add("/styles/styles.css");
 
             ((ModificationDeclarationController) loader.getController()).modifierIncident(apercuIncident);
             stage.setScene(scene);

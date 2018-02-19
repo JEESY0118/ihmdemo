@@ -103,5 +103,21 @@ public class DeclarationIncidentController extends Controllers {
         if(choiceBoxDegreImportance.getValue()==null){
             labelDegreImportance.setTextFill(Color.RED);
         }
+        if(!textFieldNom.getText().isEmpty()){
+            labelNom.setTextFill(Color.BLACK);
+        }
+        if(!textFieldPrenom.getText().isEmpty()){
+            labelPrenom.setTextFill(Color.BLACK);
+        }
+        if(!(choiceBoxTypeIncident.getValue()==null)){
+            labelTypeIncident.setTextFill(Color.BLACK);
+        }
+        if(!textFieldDeclarationBreve.getText().isEmpty()){
+            labelDeclaration.setTextFill(Color.BLACK);
+        }
+        if(!(choiceBoxDegreImportance.getValue()==null)){
+            labelDegreImportance.setTextFill(Color.BLACK);
+        }
+
     }
 }

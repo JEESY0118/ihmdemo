@@ -14,7 +14,7 @@
 
 <TitledPane fx:id="titledPane" animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Déclaration d'incident" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.polytech.ihm.controllers.DeclarationIncidentController">
     <content>
-        <GridPane alignment="BOTTOM_CENTER">
+        <GridPane alignment="BOTTOM_CENTER" styleClass="main-panel">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.0" minWidth="10.0" prefWidth="200.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="393.0" minWidth="10.0" prefWidth="376.0" />
@@ -28,10 +28,11 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <FlowPane alignment="CENTER_RIGHT" GridPane.rowIndex="8">
+                <FlowPane alignment="CENTER_RIGHT" GridPane.rowIndex="9">
                     <children>
                         <Button fx:id="annuler" alignment="BOTTOM_CENTER" cancelButton="true" mnemonicParsing="false" onAction="#handleAnnulerButton" prefHeight="25.0" prefWidth="148.0" text="Annuler la déclaration" />
                     </children>
@@ -44,19 +45,20 @@
                 <TextField fx:id="textFieldLocalisation" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                 <ChoiceBox fx:id="choiceBoxDegreImportance" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                 <TextArea fx:id="textAreaInformationsComplementaires" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                <Label text="* Nom :" />
-                <Label text="* Prenom :" GridPane.rowIndex="1" />
-                <Label text="* Type d'incident :" GridPane.rowIndex="2" />
-                <Label text="* Déclaration brève :" GridPane.rowIndex="3" />
+                <Label fx:id="labelNom" text="* Nom :" />
+                <Label fx:id="labelPrenom" text="* Prenom :" GridPane.rowIndex="1" />
+                <Label fx:id="labelTypeIncident" text="* Type d'incident :" GridPane.rowIndex="2" />
+                <Label fx:id="labelDeclaration" text="* Déclaration brève :" GridPane.rowIndex="3" />
                 <Label text="Date :" GridPane.rowIndex="4" />
                 <Label text="Localisation :" GridPane.rowIndex="5" />
-                <Label text="* Degré d'importance : " GridPane.rowIndex="6" />
+                <Label fx:id="labelDegreImportance" text="* Degré d'importance : " GridPane.rowIndex="6" />
                 <Label text="Informations complémentaires : " GridPane.rowIndex="7" />
-            <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+            <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
                <children>
                   <Button fx:id="ajouter" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleAjouterButton" prefHeight="25.0" prefWidth="159.0" text="Ajouter la déclaration" />
                </children>
             </FlowPane>
+            <Label prefHeight="17.0" prefWidth="330.0" text="Les champs notés par * sont obligatoires" GridPane.columnIndex="1" GridPane.rowIndex="8" />
             </children>
         </GridPane>
     </content>
