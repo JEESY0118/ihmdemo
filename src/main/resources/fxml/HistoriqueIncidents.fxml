@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -14,7 +11,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<TitledPane fx:id="titledPane" animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Historique" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.polytech.ihm.controllers.HistoriqueIncidentsController">
+<TitledPane fx:id="titledPane" animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Historique" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.polytech.ihm.controllers.HistoriqueIncidentsController">
    <content>
       <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="main-panel">
          <rowConstraints>
@@ -31,7 +28,7 @@
                      <content>
                         <FlowPane alignment="CENTER" prefHeight="246.0" prefWidth="598.0">
                            <children>
-                              <TableView fx:id="tableViewTout" prefHeight="305.0" prefWidth="545.0">
+                              <TableView fx:id="tableViewTout" prefHeight="310.0" prefWidth="550.0">
                                  <columns>
                                     <TableColumn fx:id="typeColumnTout" prefWidth="106.0" text="Type" />
                                     <TableColumn fx:id="descriptionColumnTout" prefWidth="327.0" text="Description" />
@@ -46,7 +43,7 @@
                      <content>
                         <FlowPane alignment="CENTER" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <TableView fx:id="tableViewSanitaire" prefHeight="295.0" prefWidth="545.0">
+                              <TableView fx:id="tableViewSanitaire" prefHeight="310.0" prefWidth="550.0">
                                  <columns>
                                     <TableColumn fx:id="typeColumnSanitaire" prefWidth="106.0" text="Type" />
                                     <TableColumn fx:id="descriptionColumnSanitaire" prefWidth="307.0" text="Description" />
@@ -61,7 +58,7 @@
                      <content>
                         <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <TableView fx:id="tableViewMateriel" prefHeight="305.0" prefWidth="545.0">
+                              <TableView fx:id="tableViewMateriel" prefHeight="310.0" prefWidth="550.0">
                                  <columns>
                                     <TableColumn fx:id="typeColumnMateriel" prefWidth="106.0" text="Type" />
                                     <TableColumn fx:id="descriptionColumnMateriel" prefWidth="307.0" text="Description" />
@@ -76,7 +73,7 @@
                      <content>
                         <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <TableView fx:id="tableViewOrganisation" prefHeight="305.0" prefWidth="545.0">
+                              <TableView fx:id="tableViewOrganisation" prefHeight="310.0" prefWidth="550.0">
                                  <columns>
                                     <TableColumn fx:id="typeColumnOrganisation" prefWidth="106.0" text="Type" />
                                     <TableColumn fx:id="descriptionColumnOrganisation" prefWidth="307.0" text="Description" />
@@ -91,7 +88,7 @@
                      <content>
                         <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <TableView fx:id="tableViewAutre" prefHeight="305.0" prefWidth="545.0">
+                              <TableView fx:id="tableViewAutre" prefHeight="310.0" prefWidth="550.0">
                                  <columns>
                                     <TableColumn fx:id="typeColumnAutre" prefWidth="106.0" text="Type" />
                                     <TableColumn fx:id="descriptionColumnAutre" prefWidth="307.0" text="Description" />
@@ -106,7 +103,7 @@
             </TabPane>
             <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #a9a9a9;" GridPane.rowIndex="1">
                <children>
-                  <Button fx:id="retour" mnemonicParsing="false" onAction="#handleRetourButton" prefHeight="25.0" prefWidth="110.0" text="Retour" />
+                  <Button fx:id="retour" mnemonicParsing="false" onAction="#handleRetourButton" prefHeight="25.0" prefWidth="110.0" styleClass="button-style" text="Retour" />
                </children>
             </FlowPane>
          </children>
