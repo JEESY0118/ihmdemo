@@ -37,7 +37,7 @@
             </GridPane>
          </bottom>
          <center>
-            <Label prefHeight="114.0" prefWidth="166.0" text="Gestion d'incidents" textOverrun="CLIP" BorderPane.alignment="CENTER">
+            <Label prefHeight="114.0" prefWidth="166.0" styleClass="gestion-incident" text="Gestion d'incidents" textOverrun="CLIP" BorderPane.alignment="CENTER">
                <font>
                   <Font size="17.0" />
                </font></Label>
