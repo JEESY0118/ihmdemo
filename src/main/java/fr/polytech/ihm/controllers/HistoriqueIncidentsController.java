@@ -4,12 +4,14 @@ import fr.polytech.ihm.MainApp;
 import fr.polytech.ihm.model.Incident;
 import fr.polytech.ihm.model.TypeIncident;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TitledPane;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseButton;
+import javafx.stage.Stage;
 
-import java.util.stream.Collectors;
+import java.io.IOException;
 
 public class HistoriqueIncidentsController extends Controllers {
     @FXML
@@ -65,6 +67,11 @@ public class HistoriqueIncidentsController extends Controllers {
         tableViewOrganisation.setItems(MainApp.getSpecificIncidents(TypeIncident.ORGANISATION));
         tableViewAutre.setItems(MainApp.getSpecificIncidents(TypeIncident.AUTRE));
 
+        showApercuOnClick(tableViewAutre);
+        showApercuOnClick(tableViewSanitaire);
+        showApercuOnClick(tableViewMateriel);
+        showApercuOnClick(tableViewOrganisation);
+        showApercuOnClick(tableViewTout);
     }
 
 
@@ -73,4 +80,31 @@ public class HistoriqueIncidentsController extends Controllers {
         String fxmlFile = "/fxml/FenetreAcceuil.fxml";
         showScene(fxmlFile, titledPane,"Fenetre Acceuil");
     }
+
+    public void showApercuOnClick(TableView<Incident> table){
+        table.setRowFactory(tv -> {
+            TableRow<Incident> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (!row.isEmpty() && event.getButton() == MouseButton.PRIMARY) {
+                    Incident clickedRow = row.getItem();
+                    FXMLLoader loader = new FXMLLoader();
+                    String fxmlFile = "/fxml/ApercuDeclaration.fxml";
+                    try {
+                        Stage stage=(Stage) titledPane.getScene().getWindow();
+                        Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
+                        Scene scene = new Scene(rootNode);
+
+                        ((ApercuDeclarationController) loader.getController()).initIncident(clickedRow);
+                        stage.setScene(scene);
+                        stage.show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            return row;
+        }
+        );
+    }
 }
+

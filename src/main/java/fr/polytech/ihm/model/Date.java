@@ -3,15 +3,17 @@ package fr.polytech.ihm.model;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-import java.time.LocalDate;
 
 public class Date {
-    private StringProperty date;
+    private StringProperty dateProperty;
+    private String date;
+
 
     public Date(String date){
-        this.date = new SimpleStringProperty(date);
+        this.dateProperty = new SimpleStringProperty(date);
+        this.date=date;
     }
 
-    public StringProperty dateProperty() { return date; }
-    public String getDate(){return date.toString();}
+    public StringProperty dateProperty() { return dateProperty; }
+    public String getDate(){return date;}
 }

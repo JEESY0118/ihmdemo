@@ -2,13 +2,16 @@ package fr.polytech.ihm.controllers;
 
 import fr.polytech.ihm.MainApp;
 import fr.polytech.ihm.model.*;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+
+import java.time.LocalDate;
 
 
 public class ModificationDeclarationController extends Controllers {
 
-    private static Incident incidentAModifier;
+    private Incident incidentAModifier;
 
     @FXML
     private Button cancel;
@@ -31,36 +34,39 @@ public class ModificationDeclarationController extends Controllers {
     @FXML
     private DatePicker datePicker;
 
+
     @FXML
     public void initialize(){
+        choiceBoxDegreImportance.setItems(FXCollections.observableArrayList("CRITIQUE", "MOYEN", "NONCRITIQUE"));
+        choiceBoxTypeIncident.setItems(FXCollections.observableArrayList( "SANITAIRE", "MATERIEL","ORGANISATION","AUTRE"));
+    }
+
+    public void modifierIncident(Incident incidentAModifier) {
+        this.incidentAModifier = incidentAModifier;
         textFieldNom.setText(incidentAModifier.getUser().getNom());
         textFieldPrenom.setText(incidentAModifier.getUser().getPrenom());
         textFieldDeclaration.setText(incidentAModifier.getDescription());
         textFieldLocalisation.setText(incidentAModifier.getLieu().getLieu());
-        choiceBoxTypeIncident.setValue(incidentAModifier.getTypeIncident());
-        choiceBoxDegreImportance.setValue(incidentAModifier.getDegreImportance());
+        choiceBoxTypeIncident.setValue(incidentAModifier.getTypeIncident().toString());
+        choiceBoxDegreImportance.setValue(incidentAModifier.getDegreImportance().toString());
+        datePicker.setValue(LocalDate.parse(incidentAModifier.getDate().getDate(),MainApp.getDateTimeFormatter()));
         textAreaInformationsComplementaires.setText(incidentAModifier.getInformationsComplementaires());
-    }
-
-    public static void setIncidentAModifier(Incident incidentAModifier) {
-        ModificationDeclarationController.incidentAModifier = incidentAModifier;
     }
 
     @FXML
     public void handleCancelButton(){
-
         String fxmlFile = "/fxml/FenetreAcceuil.fxml";
         showScene(fxmlFile,titledPane,"Acceuil");
     }
 
     @FXML
     public void handleUpdateButton(){
+        remplaceIncident();
         String fxmlFile = "/fxml/ConfirmationDeclarationIncident.fxml";
         showScene(fxmlFile,titledPane,"Confirmation déclaration incident");
-        addIncident();
     }
 
-    public void addIncident(){
+    public void remplaceIncident(){
         String nom = textFieldNom.getText();
         String prenom = textFieldPrenom.getText();
         User user = new User(nom, prenom);
