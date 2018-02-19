@@ -34,12 +34,12 @@
          <children>
             <FlowPane alignment="CENTER_RIGHT" GridPane.rowIndex="9">
                <children>
-                  <Button fx:id="cancel" alignment="CENTER_RIGHT" cancelButton="true" mnemonicParsing="false" onAction="#handleCancelButton" text="Annuler la modification" />
+                  <Button fx:id="cancel" alignment="CENTER_RIGHT" cancelButton="true" mnemonicParsing="false" onAction="#handleCancelButton" styleClass="button-style" text="Annuler la modification" />
                </children>
             </FlowPane>
             <FlowPane alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="9">
                <children>
-                  <Button fx:id="update" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleUpdateButton" text="Mettre à jour l'incident" />
+                  <Button fx:id="update" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleUpdateButton" styleClass="button-style" text="Mettre à jour l'incident" />
                </children>
             </FlowPane>
             <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="4" />
