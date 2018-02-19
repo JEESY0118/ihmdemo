@@ -16,6 +16,7 @@ public abstract class Controllers {
             Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
 
             Scene scene = new Scene(rootNode);
+            scene.getStylesheets().add("/styles/styles.css");
             stage.setTitle(titleStage);
             stage.setScene(scene);
             stage.show();
