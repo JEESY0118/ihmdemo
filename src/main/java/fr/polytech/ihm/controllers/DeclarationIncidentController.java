@@ -45,7 +45,7 @@ public class DeclarationIncidentController extends Controllers {
 
     @FXML
     void handleAjouterButton() {
-        if(textFieldNom.getText().isEmpty() || textFieldPrenom.getText().isEmpty() || choiceBoxTypeIncident.getValue()==null || textFieldDeclarationBreve.getText().isEmpty()){
+        if(textFieldNom.getText().isEmpty() || textFieldPrenom.getText().isEmpty() || choiceBoxTypeIncident.getValue()==null || textFieldDeclarationBreve.getText().isEmpty() || choiceBoxDegreImportance.getValue()==null){
             System.out.println(" Remplissez le formulaire correctement");
             return;
         }
