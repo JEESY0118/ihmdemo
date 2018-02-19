@@ -45,6 +45,10 @@ public class DeclarationIncidentController extends Controllers {
 
     @FXML
     void handleAjouterButton() {
+        if(textFieldNom.getText().isEmpty() || textFieldPrenom.getText().isEmpty() || choiceBoxTypeIncident.getValue()==null || textFieldDeclarationBreve.getText().isEmpty()){
+            System.out.println(" Remplissez le formulaire correctement");
+            return;
+        }
         String fxmlFile = "/fxml/ConfirmationDeclarationIncident.fxml";
         showScene(fxmlFile, titledPane,"Confirmation Declaration Incident");
         addIncident();
