@@ -8,6 +8,7 @@ import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 import java.time.LocalDate;
@@ -18,6 +19,9 @@ public class DeclarationIncidentController extends Controllers {
 
     @FXML
     private Button ajouter;
+
+    @FXML
+    private Label labelNom, labelPrenom, labelTypeIncident, labelDeclaration, labelDegreImportance;
 
     @FXML
     private TitledPane titledPane;
@@ -51,6 +55,7 @@ public class DeclarationIncidentController extends Controllers {
         if(textFieldNom.getText().isEmpty() || textFieldPrenom.getText().isEmpty() || choiceBoxTypeIncident.getValue()==null || textFieldDeclarationBreve.getText().isEmpty() || choiceBoxDegreImportance.getValue()==null){
             System.out.println(" Remplissez le formulaire correctement");
             errorFormAnimation(textFieldNom,textFieldPrenom,choiceBoxTypeIncident,textFieldDeclarationBreve,choiceBoxDegreImportance);
+            changeColorErrorForm();
             return;
         }
         String fxmlFile = "/fxml/ConfirmationDeclarationIncident.fxml";
@@ -82,5 +87,21 @@ public class DeclarationIncidentController extends Controllers {
         MainApp.getIncidents().add(incident);
     }
 
-
+    public void changeColorErrorForm(){
+        if(textFieldNom.getText().isEmpty()){
+            labelNom.setTextFill(Color.RED);
+        }
+        if(textFieldPrenom.getText().isEmpty()){
+            labelPrenom.setTextFill(Color.RED);
+        }
+        if(choiceBoxTypeIncident.getValue()==null){
+            labelTypeIncident.setTextFill(Color.RED);
+        }
+        if(textFieldDeclarationBreve.getText().isEmpty()){
+            labelDeclaration.setTextFill(Color.RED);
+        }
+        if(choiceBoxDegreImportance.getValue()==null){
+            labelDegreImportance.setTextFill(Color.RED);
+        }
+    }
 }

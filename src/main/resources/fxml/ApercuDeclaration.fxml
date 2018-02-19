@@ -43,7 +43,7 @@
             <Label text="* Déclaration brève :" GridPane.rowIndex="3" />
             <Label text="Date :" GridPane.rowIndex="4" />
             <Label text="Localisation :" GridPane.rowIndex="5" />
-            <Label text="Degré d'importance : " GridPane.rowIndex="6" />
+            <Label text="* Degré d'importance : " GridPane.rowIndex="6" />
             <Label text="Informations complémentaires : " GridPane.rowIndex="7" />
             <Label fx:id="labelNom" text="Label" GridPane.columnIndex="1" />
             <Label fx:id="labelPrenom" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />

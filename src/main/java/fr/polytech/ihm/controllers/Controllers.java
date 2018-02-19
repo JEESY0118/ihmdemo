@@ -40,25 +40,27 @@ public abstract class Controllers {
     }
 
     public void errorFormAnimation(TextField textFieldNom, TextField textFieldPrenom, ChoiceBox choiceBoxTypeIncident, TextField textFieldDeclaration, ChoiceBox choiceBoxDegreImportance ){
-        if(textFieldNom.getText().isEmpty()){
-            final TranslateTransition translateAnimation = new TranslateTransition(Duration.seconds(0.5), textFieldNom);
-            translationAnimation(translateAnimation);
-        }
-        if(textFieldPrenom.getText().isEmpty()){
-            final TranslateTransition translateAnimation1 = new TranslateTransition(Duration.seconds(0.5), textFieldPrenom);
-            translationAnimation(translateAnimation1);
-        }
-        if(choiceBoxTypeIncident.getValue()==null){
-            final TranslateTransition translateAnimation2 = new TranslateTransition(Duration.seconds(0.5), choiceBoxTypeIncident);
-            translationAnimation(translateAnimation2);
-        }
-        if(textFieldDeclaration.getText().isEmpty()){
-            final TranslateTransition translateAnimation3 = new TranslateTransition(Duration.seconds(0.5), textFieldDeclaration);
-            translationAnimation(translateAnimation3);
-        }
-        if(choiceBoxDegreImportance.getValue()==null){
-            final TranslateTransition translateAnimation4 = new TranslateTransition(Duration.seconds(0.5), choiceBoxDegreImportance);
-            translationAnimation(translateAnimation4);
-        }
+            if(textFieldNom.getText().isEmpty()){
+                final TranslateTransition translateAnimation = new TranslateTransition(Duration.seconds(0.5), textFieldNom);
+                translationAnimation(translateAnimation);
+
+            }
+            if(textFieldPrenom.getText().isEmpty()){
+                final TranslateTransition translateAnimation1 = new TranslateTransition(Duration.seconds(0.5), textFieldPrenom);
+                translationAnimation(translateAnimation1);
+            }
+            if(choiceBoxTypeIncident.getValue()==null){
+                final TranslateTransition translateAnimation2 = new TranslateTransition(Duration.seconds(0.5), choiceBoxTypeIncident);
+                translationAnimation(translateAnimation2);
+            }
+            if(textFieldDeclaration.getText().isEmpty()){
+                final TranslateTransition translateAnimation3 = new TranslateTransition(Duration.seconds(0.5), textFieldDeclaration);
+                translationAnimation(translateAnimation3);
+            }
+            if(choiceBoxDegreImportance.getValue()==null){
+                final TranslateTransition translateAnimation4 = new TranslateTransition(Duration.seconds(0.5), choiceBoxDegreImportance);
+                translationAnimation(translateAnimation4);
+            }
+
     }
 }

@@ -45,13 +45,13 @@
                 <TextField fx:id="textFieldLocalisation" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                 <ChoiceBox fx:id="choiceBoxDegreImportance" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                 <TextArea fx:id="textAreaInformationsComplementaires" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                <Label text="* Nom :" />
-                <Label text="* Prenom :" GridPane.rowIndex="1" />
-                <Label text="* Type d'incident :" GridPane.rowIndex="2" />
-                <Label text="* Déclaration brève :" GridPane.rowIndex="3" />
+                <Label fx:id="labelNom" text="* Nom :" />
+                <Label fx:id="labelPrenom" text="* Prenom :" GridPane.rowIndex="1" />
+                <Label fx:id="labelTypeIncident" text="* Type d'incident :" GridPane.rowIndex="2" />
+                <Label fx:id="labelDeclaration" text="* Déclaration brève :" GridPane.rowIndex="3" />
                 <Label text="Date :" GridPane.rowIndex="4" />
                 <Label text="Localisation :" GridPane.rowIndex="5" />
-                <Label text="* Degré d'importance : " GridPane.rowIndex="6" />
+                <Label fx:id="labelDegreImportance" text="* Degré d'importance : " GridPane.rowIndex="6" />
                 <Label text="Informations complémentaires : " GridPane.rowIndex="7" />
             <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
                <children>
