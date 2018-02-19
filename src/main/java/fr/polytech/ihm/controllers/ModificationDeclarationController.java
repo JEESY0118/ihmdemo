@@ -64,6 +64,7 @@ public class ModificationDeclarationController extends Controllers {
         showScene(fxmlFile,titledPane,"Acceuil");
     }
 
+    //
     @FXML
     public void handleUpdateButton(){
         if(fieldNom.getText().isEmpty() || textFieldPrenom.getText().isEmpty() || choiceBoxTypeIncident.getValue()==null || textFieldDeclaration.getText().isEmpty() || choiceBoxDegreImportance.getValue()==null){
@@ -75,6 +76,8 @@ public class ModificationDeclarationController extends Controllers {
         remplaceIncident();
         String fxmlFile = "/fxml/ConfirmationDeclarationIncident.fxml";
         showScene(fxmlFile,titledPane,"Confirmation déclaration incident");
+
+        //
     }
 
     public void remplaceIncident(){

@@ -63,6 +63,7 @@ public class DeclarationIncidentController extends Controllers {
         addIncident();
     }
 
+    //
     public void addIncident(){
         String nom = textFieldNom.getText();
         String prenom = textFieldPrenom.getText();
