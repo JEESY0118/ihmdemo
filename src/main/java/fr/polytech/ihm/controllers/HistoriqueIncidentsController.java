@@ -1,5 +1,6 @@
 package fr.polytech.ihm.controllers;
 
+import com.sun.prism.paint.Color;
 import fr.polytech.ihm.MainApp;
 import fr.polytech.ihm.model.Incident;
 import fr.polytech.ihm.model.TypeIncident;

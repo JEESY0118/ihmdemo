@@ -1,5 +1,6 @@
 package fr.polytech.ihm.controllers;
 
+import fr.polytech.ihm.MainApp;
 import fr.polytech.ihm.model.Incident;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,13 +18,10 @@ public class ApercuDeclarationController extends Controllers{
     private Incident apercuIncident;
 
     @FXML
-    private Button retour;
+    private Button retour,modifier,supprimer;
 
     @FXML
     private TitledPane titledPane;
-
-    @FXML
-    private Button modifier;
 
     @FXML
     private Label labelNom, labelPrenom, labelTypeIncident, labelDeclaration, labelDate, labelLocalisation, labelDegreImportance, labelInformationsComplementaires;
@@ -32,6 +30,13 @@ public class ApercuDeclarationController extends Controllers{
     public void handleRetourButton() {
         String fxmlFile = "/fxml/HistoriqueIncidents.fxml";
         showScene(fxmlFile, titledPane,"Historique");
+    }
+
+    @FXML
+    public void handleSupprimerButton(){
+        MainApp.getIncidents().remove(apercuIncident);
+        String fxmlFile = "/fxml/FenetreAcceuil.fxml";
+        showScene(fxmlFile, titledPane,"Acceuil");
     }
 
     @FXML

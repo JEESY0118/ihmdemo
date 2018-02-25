@@ -30,8 +30,11 @@
 .button-style:pressed{
     -fx-background-color: red;
 }
-/* Component specific styles */
 
+.textFill:hover {
+    -fx-background-color: #3dffca;
+}
+/* Component specific styles */
 
 .main-panel {
    -fx-background-image: url("../images/background.jpg");

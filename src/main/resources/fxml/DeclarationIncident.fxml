@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<TitledPane fx:id="titledPane" animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Déclaration d'incident" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.polytech.ihm.controllers.DeclarationIncidentController">
+<TitledPane fx:id="titledPane" animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Déclaration d'incident" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.polytech.ihm.controllers.DeclarationIncidentController">
     <content>
         <GridPane alignment="BOTTOM_CENTER" styleClass="main-panel">
             <columnConstraints>
@@ -37,14 +37,14 @@
                         <Button fx:id="annuler" alignment="BOTTOM_CENTER" cancelButton="true" mnemonicParsing="false" onAction="#handleAnnulerButton" prefHeight="25.0" prefWidth="148.0" styleClass="button-style" text="Annuler la déclaration" />
                     </children>
                 </FlowPane>
-                <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                <ChoiceBox fx:id="choiceBoxTypeIncident" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <TextField fx:id="textFieldNom" GridPane.columnIndex="1" />
-                <TextField fx:id="textFieldPrenom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <TextField fx:id="textFieldDeclarationBreve" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                <TextField fx:id="textFieldLocalisation" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                <ChoiceBox fx:id="choiceBoxDegreImportance" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                <TextArea fx:id="textAreaInformationsComplementaires" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                <DatePicker fx:id="datePicker" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <ChoiceBox fx:id="choiceBoxTypeIncident" prefWidth="150.0" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="textFieldNom" styleClass="textFill" GridPane.columnIndex="1" />
+                <TextField fx:id="textFieldPrenom" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="textFieldDeclarationBreve" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="textFieldLocalisation" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <ChoiceBox fx:id="choiceBoxDegreImportance" prefWidth="150.0" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <TextArea fx:id="textAreaInformationsComplementaires" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                 <Label fx:id="labelNom" text="* Nom :" />
                 <Label fx:id="labelPrenom" text="* Prenom :" GridPane.rowIndex="1" />
                 <Label fx:id="labelTypeIncident" text="* Type d'incident :" GridPane.rowIndex="2" />
