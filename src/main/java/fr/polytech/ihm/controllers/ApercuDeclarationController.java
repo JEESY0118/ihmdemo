@@ -8,8 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TitledPane;
-import javafx.scene.paint.Color;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -21,7 +20,7 @@ public class ApercuDeclarationController extends Controllers{
     private Button retour,modifier,supprimer;
 
     @FXML
-    private TitledPane titledPane;
+    private GridPane gridPane;
 
     @FXML
     private Label labelNom, labelPrenom, labelTypeIncident, labelDeclaration, labelDate, labelLocalisation, labelDegreImportance, labelInformationsComplementaires;
@@ -29,14 +28,14 @@ public class ApercuDeclarationController extends Controllers{
     @FXML
     public void handleRetourButton() {
         String fxmlFile = "/fxml/HistoriqueIncidents.fxml";
-        showScene(fxmlFile, titledPane,"Historique");
+        showScene(fxmlFile, gridPane,"Historique");
     }
 
     @FXML
     public void handleSupprimerButton(){
         MainApp.getIncidents().remove(apercuIncident);
         String fxmlFile = "/fxml/FenetreAcceuil.fxml";
-        showScene(fxmlFile, titledPane,"Acceuil");
+        showScene(fxmlFile, gridPane,"Acceuil");
     }
 
     @FXML
@@ -44,7 +43,7 @@ public class ApercuDeclarationController extends Controllers{
         String fxmlFile = "/fxml/ModificationDeclaration.fxml";
         FXMLLoader loader = new FXMLLoader();
         try {
-            Stage stage=(Stage) titledPane.getScene().getWindow();
+            Stage stage=(Stage) gridPane.getScene().getWindow();
             Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
             Scene scene = new Scene(rootNode);
             scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());

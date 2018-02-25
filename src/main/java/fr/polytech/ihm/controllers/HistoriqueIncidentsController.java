@@ -1,6 +1,5 @@
 package fr.polytech.ihm.controllers;
 
-import com.sun.prism.paint.Color;
 import fr.polytech.ihm.MainApp;
 import fr.polytech.ihm.model.Incident;
 import fr.polytech.ihm.model.TypeIncident;
@@ -8,15 +7,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
+import javafx.scene.control.TableView;
 import javafx.scene.input.MouseButton;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class HistoriqueIncidentsController extends Controllers {
     @FXML
-    private TitledPane titledPane;
+    private GridPane gridPane;
 
     @FXML
     private Button retour;
@@ -79,7 +82,7 @@ public class HistoriqueIncidentsController extends Controllers {
     @FXML
     public void handleRetourButton(){
         String fxmlFile = "/fxml/FenetreAcceuil.fxml";
-        showScene(fxmlFile, titledPane,"Fenetre Acceuil");
+        showScene(fxmlFile, gridPane, "Fenetre d'acceuil");
     }
 
     public void showApercuOnClick(TableView<Incident> table){
@@ -91,12 +94,13 @@ public class HistoriqueIncidentsController extends Controllers {
                     FXMLLoader loader = new FXMLLoader();
                     String fxmlFile = "/fxml/ApercuDeclaration.fxml";
                     try {
-                        Stage stage=(Stage) titledPane.getScene().getWindow();
+                        Stage stage = (Stage) gridPane.getScene().getWindow();
                         Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
                         Scene scene = new Scene(rootNode);
                         scene.getStylesheets().add("/styles/styles.css");
 
                         ((ApercuDeclarationController) loader.getController()).initIncident(clickedRow);
+                        stage.setTitle("Apercu de la declaration d'incident");
                         stage.setScene(scene);
                         stage.show();
                     } catch (IOException e) {

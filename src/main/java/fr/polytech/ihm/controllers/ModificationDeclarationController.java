@@ -5,6 +5,7 @@ import fr.polytech.ihm.model.*;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 
 import java.time.LocalDate;
@@ -15,7 +16,7 @@ public class ModificationDeclarationController extends Controllers {
     private Incident incidentAModifier;
 
     @FXML
-    private Label labelNom1,labelPrenom,labelIncident,labelDeclaration;
+    private Label labelNom1,labelPrenom,labelIncident,labelDeclaration,labelDatePicker;
 
 
     @FXML
@@ -25,7 +26,7 @@ public class ModificationDeclarationController extends Controllers {
     private Button update;
 
     @FXML
-    private TitledPane titledPane;
+    private GridPane gridPane;
 
     @FXML
     private TextField fieldNom, textFieldPrenom, textFieldDeclaration, textFieldLocalisation;
@@ -61,21 +62,21 @@ public class ModificationDeclarationController extends Controllers {
     @FXML
     public void handleCancelButton(){
         String fxmlFile = "/fxml/FenetreAcceuil.fxml";
-        showScene(fxmlFile,titledPane,"Acceuil");
+        showScene(fxmlFile,gridPane,"Acceuil");
     }
 
     //
     @FXML
     public void handleUpdateButton(){
-        if(fieldNom.getText().isEmpty() || textFieldPrenom.getText().isEmpty() || choiceBoxTypeIncident.getValue()==null || textFieldDeclaration.getText().isEmpty() || choiceBoxDegreImportance.getValue()==null){
+        if(fieldNom.getText().isEmpty() || textFieldPrenom.getText().isEmpty() || choiceBoxTypeIncident.getValue()==null || textFieldDeclaration.getText().isEmpty() || choiceBoxDegreImportance.getValue()==null || datePicker.getValue()==null){
             System.out.println(" Remplissez le formulaire correctement");
-            errorFormAnimation(fieldNom,textFieldPrenom,choiceBoxTypeIncident,textFieldDeclaration,choiceBoxDegreImportance);
+            errorFormAnimation(fieldNom,textFieldPrenom,choiceBoxTypeIncident,textFieldDeclaration,choiceBoxDegreImportance,datePicker);
             changeColorErrorForm();
             return;
         }
         remplaceIncident();
         String fxmlFile = "/fxml/ConfirmationDeclarationIncident.fxml";
-        showScene(fxmlFile,titledPane,"Confirmation déclaration incident");
+        showScene(fxmlFile,gridPane,"Confirmation déclaration incident");
 
         //
     }
@@ -107,7 +108,6 @@ public class ModificationDeclarationController extends Controllers {
 
     public void changeColorErrorForm(){
         if(fieldNom.getText().isEmpty()){
-            System.out.println("testFieldNom");
             labelNom1.setTextFill(Color.RED);
         }
         if(textFieldPrenom.getText().isEmpty()){
@@ -119,9 +119,10 @@ public class ModificationDeclarationController extends Controllers {
         if(textFieldDeclaration.getText().isEmpty()){
             labelDeclaration.setTextFill(Color.RED);
         }
-
+        if(datePicker.getValue()==null){
+            labelDatePicker.setTextFill(Color.RED);
+        }
         if(!fieldNom.getText().isEmpty()){
-            System.out.println("testFieldNom");
             labelNom1.setTextFill(Color.BLACK);
         }
         if(!textFieldPrenom.getText().isEmpty()){
@@ -132,6 +133,9 @@ public class ModificationDeclarationController extends Controllers {
         }
         if(!textFieldDeclaration.getText().isEmpty()){
             labelDeclaration.setTextFill(Color.BLACK);
+        }
+        if(!(datePicker.getValue()==null)){
+            labelDatePicker.setTextFill(Color.BLACK);
         }
 
     }

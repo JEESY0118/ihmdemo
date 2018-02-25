@@ -2,37 +2,27 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TitledPane?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<TitledPane fx:id="titledPane" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.polytech.ihm.controllers.ConfirmationDeclarationIncidentController">
-   <content>
-      <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="main-panel" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.polytech.ihm.controllers.ConfirmationDeclarationIncidentController">
+   <center>
+      <FlowPane alignment="CENTER" orientation="VERTICAL" prefHeight="292.0" prefWidth="500.0" BorderPane.alignment="CENTER">
          <children>
-            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #a9a9a9;">
-               <center>
-                  <FlowPane alignment="CENTER" orientation="VERTICAL" prefHeight="292.0" prefWidth="500.0" BorderPane.alignment="CENTER">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Votre déclaration d'incident a été prise en compte. Merci pour votre coopération.">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Text>
-                        <Separator prefHeight="51.0" prefWidth="537.0" />
-                        <FlowPane alignment="CENTER" prefHeight="45.0" prefWidth="537.0">
-                           <children>
-                              <Button fx:id="retourAuMenu" alignment="CENTER" mnemonicParsing="false" onAction="#handleRetourButton" prefHeight="13.0" prefWidth="128.0" styleClass="button-style" text="Retour au menu" />
-                           </children>
-                        </FlowPane>
-                     </children>
-                  </FlowPane>
-               </center>
-            </BorderPane>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Votre déclaration d'incident a été prise en compte. Merci pour votre coopération.">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Separator prefHeight="51.0" prefWidth="537.0" />
+            <FlowPane alignment="CENTER" prefHeight="45.0" prefWidth="537.0">
+               <children>
+                  <Button fx:id="retourAuMenu" alignment="CENTER" mnemonicParsing="false" onAction="#handleRetourButton" prefHeight="13.0" prefWidth="128.0" styleClass="button-style" text="Retour au menu" />
+               </children>
+            </FlowPane>
          </children>
-      </AnchorPane>
-   </content>
-</TitledPane>
+      </FlowPane>
+   </center>
+</BorderPane>

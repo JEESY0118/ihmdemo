@@ -6,60 +6,55 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<TitledPane fx:id="titledPane" animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #a9a9a9;" text="Modification d'incident" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.polytech.ihm.controllers.ModificationDeclarationController">
-   <content>
-      <GridPane alignment="BOTTOM_CENTER" style="-fx-background-color: #a9a9a9;">
-         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.0" minWidth="10.0" prefWidth="200.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="393.0" minWidth="10.0" prefWidth="376.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         </rowConstraints>
+<GridPane fx:id="gridPane" alignment="BOTTOM_CENTER" style="-fx-background-color: #a9a9a9;" styleClass="main-panel" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.polytech.ihm.controllers.ModificationDeclarationController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.0" minWidth="10.0" prefWidth="200.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="393.0" minWidth="10.0" prefWidth="376.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <FlowPane alignment="CENTER_RIGHT" GridPane.rowIndex="9">
          <children>
-            <FlowPane alignment="CENTER_RIGHT" GridPane.rowIndex="9">
-               <children>
-                  <Button fx:id="cancel" alignment="CENTER_RIGHT" cancelButton="true" mnemonicParsing="false" onAction="#handleCancelButton" styleClass="button-style" text="Annuler la modification" />
-               </children>
-            </FlowPane>
-            <FlowPane alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="9">
-               <children>
-                  <Button fx:id="update" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleUpdateButton" styleClass="button-style" text="Mettre à jour l'incident" />
-               </children>
-            </FlowPane>
-            <DatePicker fx:id="datePicker" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <ChoiceBox fx:id="choiceBoxTypeIncident" prefWidth="150.0" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="fieldNom" styleClass="textFill" GridPane.columnIndex="1" />
-            <TextField fx:id="textFieldPrenom" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="textFieldDeclaration" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField fx:id="textFieldLocalisation" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <ChoiceBox fx:id="choiceBoxDegreImportance" prefWidth="150.0" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <TextArea fx:id="textAreaInformationsComplementaires" prefHeight="200.0" prefWidth="200.0" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Label fx:id="labelNom1" text="* Nom :" />
-            <Label fx:id="labelPrenom" text="* Prenom :" GridPane.rowIndex="1" />
-            <Label fx:id="labelIncident" text="* Type d'incident :" GridPane.rowIndex="2" />
-            <Label fx:id="labelDeclaration" text="* Déclaration brève :" GridPane.rowIndex="3" />
-            <Label fx:id="labelDate" text="Date :" GridPane.rowIndex="4" />
-            <Label fx:id="labelLocalisation" text="Localisation :" GridPane.rowIndex="5" />
-            <Label fx:id="labelImportance" text="Degré d'importance : " GridPane.rowIndex="6" />
-            <Label fx:id="labelComplementaire" text="Informations complémentaires : " GridPane.rowIndex="7" />
-            <Label prefHeight="17.0" prefWidth="307.0" text="Les champs notés par * sont obligatoires" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Button fx:id="cancel" alignment="CENTER_RIGHT" cancelButton="true" mnemonicParsing="false" onAction="#handleCancelButton" styleClass="button-style" text="Annuler la modification" />
          </children>
-      </GridPane>
-   </content>
-</TitledPane>
+      </FlowPane>
+      <FlowPane alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="9">
+         <children>
+            <Button fx:id="update" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleUpdateButton" styleClass="button-style" text="Mettre à jour l'incident" />
+         </children>
+      </FlowPane>
+      <DatePicker fx:id="datePicker" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <ChoiceBox fx:id="choiceBoxTypeIncident" prefWidth="150.0" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <TextField fx:id="fieldNom" styleClass="textFill" GridPane.columnIndex="1" />
+      <TextField fx:id="textFieldPrenom" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField fx:id="textFieldDeclaration" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <TextField fx:id="textFieldLocalisation" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <ChoiceBox fx:id="choiceBoxDegreImportance" prefWidth="150.0" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <TextArea fx:id="textAreaInformationsComplementaires" prefHeight="200.0" prefWidth="200.0" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+      <Label fx:id="labelNom1" text="* Nom :" />
+      <Label fx:id="labelPrenom" text="* Prenom :" GridPane.rowIndex="1" />
+      <Label fx:id="labelIncident" text="* Type d'incident :" GridPane.rowIndex="2" />
+      <Label fx:id="labelDeclaration" text="* Déclaration brève :" GridPane.rowIndex="3" />
+      <Label fx:id="labelDatePicker" text="* Date :" GridPane.rowIndex="4" />
+      <Label fx:id="labelLocalisation" text="Localisation :" GridPane.rowIndex="5" />
+      <Label fx:id="labelImportance" text="Degré d'importance : " GridPane.rowIndex="6" />
+      <Label fx:id="labelComplementaire" text="Informations complémentaires : " GridPane.rowIndex="7" />
+      <Label prefHeight="17.0" prefWidth="307.0" text="Les champs notés par * sont obligatoires" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+   </children>
+</GridPane>

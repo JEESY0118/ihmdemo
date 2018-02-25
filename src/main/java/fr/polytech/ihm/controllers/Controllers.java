@@ -6,7 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -38,7 +40,7 @@ public abstract class Controllers {
         translateAnimation.play();
     }
 
-    public void errorFormAnimation(TextField textFieldNom, TextField textFieldPrenom, ChoiceBox choiceBoxTypeIncident, TextField textFieldDeclaration, ChoiceBox choiceBoxDegreImportance ){
+    public void errorFormAnimation(TextField textFieldNom, TextField textFieldPrenom, ChoiceBox choiceBoxTypeIncident, TextField textFieldDeclaration, ChoiceBox choiceBoxDegreImportance , DatePicker datePicker){
             if(textFieldNom.getText().isEmpty()){
                 final TranslateTransition translateAnimation = new TranslateTransition(Duration.seconds(0.5), textFieldNom);
                 translationAnimation(translateAnimation);
@@ -61,5 +63,12 @@ public abstract class Controllers {
                 translationAnimation(translateAnimation4);
             }
 
+            if(datePicker.getValue()==null){
+                final TranslateTransition translateAnimation5 = new TranslateTransition(Duration.seconds(0.5), datePicker);
+                translationAnimation(translateAnimation5);
+            }
+
     }
-}
+
+
+    }

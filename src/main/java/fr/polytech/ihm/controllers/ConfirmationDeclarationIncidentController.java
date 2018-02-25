@@ -1,10 +1,8 @@
 package fr.polytech.ihm.controllers;
 
 import javafx.fxml.FXML;
-
 import javafx.scene.control.Button;
-import javafx.scene.control.TitledPane;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 
 
 public class ConfirmationDeclarationIncidentController extends Controllers {
@@ -12,15 +10,13 @@ public class ConfirmationDeclarationIncidentController extends Controllers {
     private Button retourAuMenu;
 
     @FXML
-    private AnchorPane anchorPane;
+    private BorderPane borderPane;
 
-    @FXML
-    private TitledPane titledPane;
 
     @FXML
     private void handleRetourButton(){
         String fxmlFile = "/fxml/FenetreAcceuil.fxml";
-        showScene(fxmlFile,titledPane,"Acceuil");
+        showScene(fxmlFile, borderPane, "Acceuil");
     }
 
 }

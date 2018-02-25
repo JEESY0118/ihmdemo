@@ -20,7 +20,7 @@ public class MainApp extends Application {
 
     private static ObservableList<Incident> incidents = FXCollections.observableArrayList();
 
-    private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+    private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     public static void main(String[] args) throws Exception {
         launch(args);
@@ -84,27 +84,27 @@ public class MainApp extends Application {
         if(incidents.isEmpty()){
             User user = new User("Lazrak","Sami");
             Lieu lieu = new Lieu("O+135");
-            Date date = new Date(formatter.format(LocalDate.parse("16/01/2018", formatter)));
+            Date date = new Date(formatter.format(LocalDate.parse("2018-01-16", formatter)));
             Incident incident = new Incident(user, TypeIncident.ORGANISATION, "Tableau non effacé", date, lieu, DegreImportance.NONCRITIQUE, "urgent !");
 
             User user1 = new User("Wei","Wang");
             Lieu lieu1 = new Lieu("Toilettes");
-            Date date1 = new Date(formatter.format(LocalDate.parse("01/02/2018", formatter)));
+            Date date1 = new Date(formatter.format(LocalDate.parse("2018-02-01", formatter)));
             Incident incident1 = new Incident(user1, TypeIncident.ORGANISATION, "Pas de papier toilette",date1, lieu1, DegreImportance.CRITIQUE, " au plus vite !");
 
             User user2 = new User("Theo","Bonnet");
             Lieu lieu2 = new Lieu("Parking");
-            Date date2 = new Date(formatter.format(LocalDate.parse("16/02/2018", formatter)));
+            Date date2 = new Date(formatter.format(LocalDate.parse("2018-02-04", formatter)));
             Incident incident2 = new Incident(user2, TypeIncident.AUTRE, "Pas assez de place", date2, lieu2, DegreImportance.MOYEN, " Trop chiant les matins !");
 
             User user3 = new User("Bastien","Gillet");
             Lieu lieu3 = new Lieu("O+229");
-            Date date3 = new Date(formatter.format(LocalDate.parse("13/01/2018", formatter)));
+            Date date3 = new Date(formatter.format(LocalDate.parse("2018-01-13", formatter)));
             Incident incident3 = new Incident(user3, TypeIncident.MATERIEL, "Pas assez de prises", date3, lieu3, DegreImportance.NONCRITIQUE, " Reglez ca !");
 
             User user4 = new User("Djebbar","Gabriel");
             Lieu lieu4 = new Lieu("Toilettes");
-            Date date4 = new Date(formatter.format(LocalDate.parse("28/01/2018", formatter)));
+            Date date4 = new Date(formatter.format(LocalDate.parse("2018-01-28", formatter)));
             Incident incident4 = new Incident(user4, TypeIncident.SANITAIRE, "Trop sale", date4, lieu4, DegreImportance.CRITIQUE, " C'est degoutant !");
 
             incidents.add(incident);

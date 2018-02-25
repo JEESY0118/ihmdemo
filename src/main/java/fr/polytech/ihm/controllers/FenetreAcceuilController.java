@@ -3,8 +3,8 @@ package fr.polytech.ihm.controllers;
 import javafx.fxml.FXML;
 
 import javafx.scene.control.Button;
-import javafx.scene.control.TitledPane;
-import javafx.scene.layout.AnchorPane;
+
+import javafx.scene.layout.BorderPane;
 
 
 public class FenetreAcceuilController extends Controllers {
@@ -16,17 +16,17 @@ public class FenetreAcceuilController extends Controllers {
     private Button historique;
 
     @FXML
-    private AnchorPane anchorPane;
+    private BorderPane borderPane;
     
     @FXML
     public void handleHistoriqueButton() {
         String fxmlFile = "/fxml/HistoriqueIncidents.fxml";
-        showScene(fxmlFile,anchorPane,"Historique Incidents");
+        showScene(fxmlFile,borderPane,"Historique");
     }
 
     @FXML
     public void handleDeclareButton(){
         String fxmlFile = "/fxml/DeclarationIncident.fxml";
-        showScene(fxmlFile,anchorPane,"Declaration Incident");
+        showScene(fxmlFile,borderPane,"Declaration Incident");
     }
 }

@@ -8,6 +8,7 @@ import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
@@ -21,10 +22,10 @@ public class DeclarationIncidentController extends Controllers {
     private Button ajouter;
 
     @FXML
-    private Label labelNom, labelPrenom, labelTypeIncident, labelDeclaration, labelDegreImportance;
+    private Label labelNom, labelPrenom, labelTypeIncident, labelDeclaration, labelDegreImportance, labelDatePicker;
 
     @FXML
-    private TitledPane titledPane;
+    private GridPane gridPane;
 
     @FXML
     private TextField textFieldNom,textFieldPrenom,textFieldDeclarationBreve,textFieldLocalisation;
@@ -47,19 +48,19 @@ public class DeclarationIncidentController extends Controllers {
     @FXML
     void handleAnnulerButton() {
         String fxmlFile = "/fxml/FenetreAcceuil.fxml";
-        showScene(fxmlFile, titledPane,"Fenetre Acceuil");
+        showScene(fxmlFile, gridPane,"Fenetre d'Acceuil");
     }
 
     @FXML
     void handleAjouterButton() {
-        if(textFieldNom.getText().isEmpty() || textFieldPrenom.getText().isEmpty() || choiceBoxTypeIncident.getValue()==null || textFieldDeclarationBreve.getText().isEmpty() || choiceBoxDegreImportance.getValue()==null){
+        if(textFieldNom.getText().isEmpty() || textFieldPrenom.getText().isEmpty() || choiceBoxTypeIncident.getValue()==null || textFieldDeclarationBreve.getText().isEmpty() || choiceBoxDegreImportance.getValue()==null || datePicker.getValue()==null){
             System.out.println(" Remplissez le formulaire correctement");
-            errorFormAnimation(textFieldNom,textFieldPrenom,choiceBoxTypeIncident,textFieldDeclarationBreve,choiceBoxDegreImportance);
+            errorFormAnimation(textFieldNom,textFieldPrenom,choiceBoxTypeIncident,textFieldDeclarationBreve,choiceBoxDegreImportance,datePicker);
             changeColorErrorForm();
             return;
         }
         String fxmlFile = "/fxml/ConfirmationDeclarationIncident.fxml";
-        showScene(fxmlFile, titledPane,"Confirmation Declaration Incident");
+        showScene(fxmlFile, gridPane,"Confirmation Declaration Incident");
         addIncident();
     }
 
@@ -104,6 +105,9 @@ public class DeclarationIncidentController extends Controllers {
         if(choiceBoxDegreImportance.getValue()==null){
             labelDegreImportance.setTextFill(Color.RED);
         }
+        if(datePicker.getValue()==null){
+            labelDatePicker.setTextFill(Color.RED);
+        }
         if(!textFieldNom.getText().isEmpty()){
             labelNom.setTextFill(Color.BLACK);
         }
@@ -118,6 +122,9 @@ public class DeclarationIncidentController extends Controllers {
         }
         if(!(choiceBoxDegreImportance.getValue()==null)){
             labelDegreImportance.setTextFill(Color.BLACK);
+        }
+        if(!(datePicker.getValue()==null)){
+            labelDatePicker.setTextFill(Color.BLACK);
         }
 
     }
