@@ -96,7 +96,7 @@ public class HistoriqueIncidentsController extends Controllers {
                     try {
                         Stage stage = (Stage) gridPane.getScene().getWindow();
                         Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
-                        Scene scene = new Scene(rootNode);
+                        Scene scene = new Scene(rootNode,700,400);
                         scene.getStylesheets().add("/styles/styles.css");
 
                         ((ApercuDeclarationController) loader.getController()).initIncident(clickedRow);

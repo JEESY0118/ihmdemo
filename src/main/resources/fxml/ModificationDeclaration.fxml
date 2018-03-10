@@ -27,34 +27,37 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <FlowPane alignment="CENTER_RIGHT" GridPane.rowIndex="9">
+      <FlowPane alignment="CENTER_RIGHT" GridPane.rowIndex="10">
          <children>
             <Button fx:id="cancel" alignment="CENTER_RIGHT" cancelButton="true" mnemonicParsing="false" onAction="#handleCancelButton" styleClass="button-style" text="Annuler la modification" />
          </children>
       </FlowPane>
-      <FlowPane alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="9">
+      <FlowPane alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="10">
          <children>
             <Button fx:id="update" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleUpdateButton" styleClass="button-style" text="Mettre à jour l'incident" />
          </children>
       </FlowPane>
-      <DatePicker fx:id="datePicker" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      <ChoiceBox fx:id="choiceBoxTypeIncident" prefWidth="150.0" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <TextField fx:id="fieldNom" styleClass="textFill" GridPane.columnIndex="1" />
+      <DatePicker fx:id="datePicker" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <ChoiceBox fx:id="choiceBoxTypeIncident" prefWidth="150.0" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <TextField fx:id="textFieldNom" styleClass="textFill" GridPane.columnIndex="1" />
       <TextField fx:id="textFieldPrenom" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <TextField fx:id="textFieldDeclaration" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <TextField fx:id="textFieldLocalisation" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-      <ChoiceBox fx:id="choiceBoxDegreImportance" prefWidth="150.0" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-      <TextArea fx:id="textAreaInformationsComplementaires" prefHeight="200.0" prefWidth="200.0" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+      <TextField fx:id="textFieldDeclaration" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <TextField fx:id="textFieldLocalisation" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <ChoiceBox fx:id="choiceBoxDegreImportance" prefWidth="150.0" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+      <TextArea fx:id="textAreaInformationsComplementaires" prefHeight="200.0" prefWidth="200.0" styleClass="textFill" GridPane.columnIndex="1" GridPane.rowIndex="8" />
       <Label fx:id="labelNom1" text="* Nom :" />
       <Label fx:id="labelPrenom" text="* Prenom :" GridPane.rowIndex="1" />
-      <Label fx:id="labelIncident" text="* Type d'incident :" GridPane.rowIndex="2" />
-      <Label fx:id="labelDeclaration" text="* Déclaration brève :" GridPane.rowIndex="3" />
-      <Label fx:id="labelDatePicker" text="* Date :" GridPane.rowIndex="4" />
-      <Label fx:id="labelLocalisation" text="Localisation :" GridPane.rowIndex="5" />
-      <Label fx:id="labelImportance" text="Degré d'importance : " GridPane.rowIndex="6" />
-      <Label fx:id="labelComplementaire" text="Informations complémentaires : " GridPane.rowIndex="7" />
-      <Label prefHeight="17.0" prefWidth="307.0" text="Les champs notés par * sont obligatoires" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+      <Label fx:id="labelIncident" text="* Type d'incident :" GridPane.rowIndex="3" />
+      <Label fx:id="labelDeclaration" text="* Déclaration brève :" GridPane.rowIndex="4" />
+      <Label fx:id="labelDatePicker" text="* Date :" GridPane.rowIndex="5" />
+      <Label fx:id="labelLocalisation" text="Localisation :" GridPane.rowIndex="6" />
+      <Label fx:id="labelImportance" text="Degré d'importance : " GridPane.rowIndex="7" />
+      <Label fx:id="labelComplementaire" text="Informations complémentaires : " GridPane.rowIndex="8" />
+      <Label prefHeight="17.0" prefWidth="307.0" text="Les champs notés par * sont obligatoires" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+      <Label prefHeight="17.0" prefWidth="78.0" text=" Rôle :" GridPane.rowIndex="2" />
+      <TextField fx:id="textFieldRole" GridPane.columnIndex="1" GridPane.rowIndex="2" />
    </children>
 </GridPane>

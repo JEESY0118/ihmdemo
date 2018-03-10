@@ -4,7 +4,6 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public enum TypeIncident {
-    TOUT("Tout"),
     SANITAIRE("Sanitaire"),
     MATERIEL("Materiel"),
     ORGANISATION("Organisation"),

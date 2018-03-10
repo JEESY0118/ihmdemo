@@ -28,7 +28,7 @@ public class DeclarationIncidentController extends Controllers {
     private GridPane gridPane;
 
     @FXML
-    private TextField textFieldNom,textFieldPrenom,textFieldDeclarationBreve,textFieldLocalisation;
+    private TextField textFieldNom,textFieldPrenom,textFieldDeclarationBreve,textFieldLocalisation,textFieldRole;
 
     @FXML
     private TextArea textAreaInformationsComplementaires;
@@ -70,6 +70,8 @@ public class DeclarationIncidentController extends Controllers {
         String prenom = textFieldPrenom.getText();
         User user = new User(nom, prenom);
 
+        String role = textFieldRole.getText();
+
         String declarationBreve = textFieldDeclarationBreve.getText();
 
         String localisation = textFieldLocalisation.getText();
@@ -84,7 +86,7 @@ public class DeclarationIncidentController extends Controllers {
 
         DegreImportance degreImportance = DegreImportance.valueOf(choiceBoxDegreImportance.getValue().toString());
 
-        Incident incident = new Incident(user, typeIncident, declarationBreve, date, lieu, degreImportance, informationsComplementaires);
+        Incident incident = new Incident(user, role, typeIncident, declarationBreve, date, lieu, degreImportance, informationsComplementaires);
 
         MainApp.getIncidents().add(incident);
     }

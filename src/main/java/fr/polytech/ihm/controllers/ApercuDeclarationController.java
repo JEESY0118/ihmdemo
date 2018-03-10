@@ -23,7 +23,7 @@ public class ApercuDeclarationController extends Controllers{
     private GridPane gridPane;
 
     @FXML
-    private Label labelNom, labelPrenom, labelTypeIncident, labelDeclaration, labelDate, labelLocalisation, labelDegreImportance, labelInformationsComplementaires;
+    private Label labelNom, labelPrenom, labelRole, labelTypeIncident, labelDeclaration, labelDate, labelLocalisation, labelDegreImportance, labelInformationsComplementaires;
 
     @FXML
     public void handleRetourButton() {
@@ -45,11 +45,12 @@ public class ApercuDeclarationController extends Controllers{
         try {
             Stage stage=(Stage) gridPane.getScene().getWindow();
             Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
-            Scene scene = new Scene(rootNode);
+            Scene scene = new Scene(rootNode,700,400);
             scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
 
 
             ((ModificationDeclarationController) loader.getController()).modifierIncident(apercuIncident);
+            stage.setTitle("Modification de l'incident");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
@@ -62,6 +63,7 @@ public class ApercuDeclarationController extends Controllers{
         apercuIncident = incident;
         labelNom.setText(apercuIncident.getUser().getNom());
         labelPrenom.setText(apercuIncident.getUser().getPrenom());
+        labelRole.setText(apercuIncident.getRole());
         labelTypeIncident.setText(apercuIncident.getTypeIncident().toString());
         labelDeclaration.setText(apercuIncident.getDescription().toString());
         labelDate.setText(apercuIncident.getDate().getDate());

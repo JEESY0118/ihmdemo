@@ -29,7 +29,7 @@ public class ModificationDeclarationController extends Controllers {
     private GridPane gridPane;
 
     @FXML
-    private TextField fieldNom, textFieldPrenom, textFieldDeclaration, textFieldLocalisation;
+    private TextField textFieldNom, textFieldPrenom, textFieldDeclaration, textFieldLocalisation, textFieldRole;
 
     @FXML
     private ChoiceBox choiceBoxDegreImportance, choiceBoxTypeIncident;
@@ -49,8 +49,9 @@ public class ModificationDeclarationController extends Controllers {
 
     public void modifierIncident(Incident incidentAModifier) {
         this.incidentAModifier = incidentAModifier;
-        fieldNom.setText(incidentAModifier.getUser().getNom());
+        textFieldNom.setText(incidentAModifier.getUser().getNom());
         textFieldPrenom.setText(incidentAModifier.getUser().getPrenom());
+        textFieldRole.setText(incidentAModifier.getRole());
         textFieldDeclaration.setText(incidentAModifier.getDescription());
         textFieldLocalisation.setText(incidentAModifier.getLieu().getLieu());
         choiceBoxTypeIncident.setValue(incidentAModifier.getTypeIncident().toString());
@@ -68,9 +69,9 @@ public class ModificationDeclarationController extends Controllers {
     //
     @FXML
     public void handleUpdateButton(){
-        if(fieldNom.getText().isEmpty() || textFieldPrenom.getText().isEmpty() || choiceBoxTypeIncident.getValue()==null || textFieldDeclaration.getText().isEmpty() || choiceBoxDegreImportance.getValue()==null || datePicker.getValue()==null){
+        if(textFieldNom.getText().isEmpty() || textFieldPrenom.getText().isEmpty() || choiceBoxTypeIncident.getValue()==null || textFieldDeclaration.getText().isEmpty() || choiceBoxDegreImportance.getValue()==null || datePicker.getValue()==null){
             System.out.println(" Remplissez le formulaire correctement");
-            errorFormAnimation(fieldNom,textFieldPrenom,choiceBoxTypeIncident,textFieldDeclaration,choiceBoxDegreImportance,datePicker);
+            errorFormAnimation(textFieldNom,textFieldPrenom,choiceBoxTypeIncident,textFieldDeclaration,choiceBoxDegreImportance,datePicker);
             changeColorErrorForm();
             return;
         }
@@ -82,10 +83,10 @@ public class ModificationDeclarationController extends Controllers {
     }
 
     public void remplaceIncident(){
-        String nom = fieldNom.getText();
+        String nom = textFieldNom.getText();
         String prenom = textFieldPrenom.getText();
         User user = new User(nom, prenom);
-
+        String role = textFieldRole.getText();
         String declarationBreve = textFieldDeclaration.getText();
 
         String localisation = textFieldLocalisation.getText();
@@ -101,13 +102,13 @@ public class ModificationDeclarationController extends Controllers {
         DegreImportance degreImportance = DegreImportance.valueOf(choiceBoxDegreImportance.getValue().toString());
 
         MainApp.getIncidents().remove(incidentAModifier);
-        Incident incident = new Incident(user, typeIncident, declarationBreve, date, lieu, degreImportance, informationsComplementaires);
+        Incident incident = new Incident(user, role, typeIncident, declarationBreve, date, lieu, degreImportance, informationsComplementaires);
         MainApp.getIncidents().add(incident);
     }
 
 
     public void changeColorErrorForm(){
-        if(fieldNom.getText().isEmpty()){
+        if(textFieldNom.getText().isEmpty()){
             labelNom1.setTextFill(Color.RED);
         }
         if(textFieldPrenom.getText().isEmpty()){
@@ -122,7 +123,7 @@ public class ModificationDeclarationController extends Controllers {
         if(datePicker.getValue()==null){
             labelDatePicker.setTextFill(Color.RED);
         }
-        if(!fieldNom.getText().isEmpty()){
+        if(!textFieldNom.getText().isEmpty()){
             labelNom1.setTextFill(Color.BLACK);
         }
         if(!textFieldPrenom.getText().isEmpty()){
